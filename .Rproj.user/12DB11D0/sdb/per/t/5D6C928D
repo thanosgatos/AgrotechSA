@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1391690605068.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5D6C928D",
+    "lastKnownWriteTime" : 140522739924998,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "allSkus",
+        "contentUrl" : "content?title=allSkus&file=83229c79f4724ffaab2c861672b12d4a.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 12,
+        "totalObservations" : 22068,
+        "variables" : 11
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

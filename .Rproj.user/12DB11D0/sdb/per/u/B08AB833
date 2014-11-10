@@ -1,0 +1,17 @@
+{
+    "contents" : "allSkus <- read.csv(\"AgrotechSKUs.csv\", row.names = 1)\nskus <- allSkus[, c(2, 10, 11)]\n\n# timi <- skus$TimiLianikis\n# zitisi <- skus$PosotitaPoliseon\n# critical <- skus$CriticalCode\n\n# library(ggplot2)\n# xyplot(zitisi ~ timi | critical, data = skus)\n",
+    "created" : 1384284334190.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1408083977",
+    "id" : "B08AB833",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
