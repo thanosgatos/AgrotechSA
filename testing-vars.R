@@ -11,3 +11,11 @@ class.first <- skus %>%
   arrange(desc(tziros), desc(kerdos)) %>%
   slice(1)
 
+skus2 <- skus %>%
+  select(sku, inventory.class, timi.polisis, zitisi, tziros) %>%
+  arrange(desc(tziros)) %>%
+  mutate(perc.tziros = tziros / sum(tziros), 
+         cum.perc.tziros = cumsum(perc.tziros))
+
+skus3 <- filter(skus2, cum.perc.tziros < 0.8)
+
