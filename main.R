@@ -1,24 +1,22 @@
-# Read and subset the data
-
-skusInitial <- read.csv("AgrotechSKUs.csv", row.names = 1)
-skus <- skusInitial[, c(2, 6, 10, 11)]
-skus <- transform(skus, CriticalCode = factor(CriticalCode))
+# Load packages ----------------------------------------------------------------
+library(dplyr)
+library(ggplot2)
 
 
-# Define easier-to-use variables
+# Load data --------------------------------------------------------------------
 
-critCode <- skus$CriticalCode
-invClass <- skus$InventoryClassCode
-timi <- skus$TimiLianikis
-zitisi <- skus$PosotitaPoliseon
-
-tziros <- timi*zitisi
-
-skus <- cbind(skus, tziros)
-
-tziros <- skus$tziros
+skus.initial <- read.csv("AgrotechSKUs.csv")
+skus.initial <- transform(skus.initial, CriticalCode = factor(CriticalCode))
 
 
-# Sort the data frame
+# Transform data ---------------------------------------------------------------
 
-
+skus <- tbl_df(skus.initial) %>%
+	select(SKU, InventoryClassCode, CriticalCode, CommodityCode, 
+	       DNPTimiAgoras, TimiLianikis, PosotitaPoliseon) %>%
+	rename(sku = SKU, inventory.class = InventoryClassCode, 
+	       critical.code = CriticalCode, commodity.code = CommodityCode, 
+	       timi.agoras = DNPTimiAgoras, timi.polisis = TimiLianikis, 
+	       zitisi = PosotitaPoliseon) %>%
+	mutate(kerdos = timi.polisis - timi.agoras, 
+	       tziros = zitisi * timi.polisis)

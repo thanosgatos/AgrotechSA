@@ -11,6 +11,8 @@ class.first <- skus %>%
   arrange(desc(tziros), desc(kerdos)) %>%
   slice(1)
 
+
+
 skus2 <- skus %>%
   select(sku, inventory.class, timi.polisis, zitisi, tziros) %>%
   arrange(desc(tziros)) %>%
@@ -18,4 +20,8 @@ skus2 <- skus %>%
          cum.perc.tziros = cumsum(perc.tziros))
 
 skus3 <- filter(skus2, cum.perc.tziros < 0.8)
+
+q80 <- quantile(skus$tziros, probs = 0.8)
+class.alpha <- filter(skus, tziros > q80)
+
 
