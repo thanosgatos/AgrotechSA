@@ -74,12 +74,12 @@ abc.plot + geom_line() + xlab("Αθροιστικό ποσοστό % κωδικ�
   annotate("rect", xmin = 0, xmax = (1293+2391)/22068*100, ymin = 0, 
            ymax = 95, alpha = .2) + 
   annotate("rect", xmin = 0, xmax = 100, ymin = 0, ymax = 100, alpha = .2) + 
-  annotate("text", x = (1293/22068)/2*100, y = 80/2, label = "Κωδικοί A", 
+  annotate("text", x = (1293/22068)/2*100, y = 80/2, label = "Κωδικοί A (1,293)", 
            angle = 90) + 
   annotate("text", x = (1293/22068+(2391/22068)/2)*100, y = 95/2, 
-           label = "Κωδικοί B", angle = 90) + 
+           label = "Κωδικοί B (2,391)", angle = 90) + 
   annotate("text", x = (2391/22068+(1-(2391/22068))/2)*100, y = 50, 
-           label = "Κωδικοί C") + 
+           label = "Κωδικοί C (18,384)") + 
   scale_y_continuous(breaks = c(0, 80, 95, 100)) + 
   scale_x_continuous(breaks = round(c(0, 1293/22068*100, (1293+2391)/22068*100, 
                                       100), 2))

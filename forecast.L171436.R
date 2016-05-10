@@ -71,7 +71,7 @@ fitall.L171436 <- ets(ts.demand.L171436, model = "AAM", restrict = FALSE,
 fcastall.L171436 <- forecast(fitall.L171436, h = 12)
 fcastcomp.L171436 <- forecast(ets(train.L171436, model = fitall.L171436, 
                                   restrict = FALSE, use.initial.values = TRUE), 
-                              h = 12)
+                              h = 14)
 plot(fcastall.L171436, xlab = "Χρόνος", ylab = "Πωλήσεις", main = "L171436")
 
 
